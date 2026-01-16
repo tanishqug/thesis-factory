@@ -1,0 +1,552 @@
+[
+    {
+        "id": "MIT_USA",
+        "uni_name": "Massachusetts Institute of Technology (MIT)",
+        "course_name": "PhD / Master's Thesis",
+        "year": "2026",
+        "margins": {
+            "left": 1.0,
+            "right": 1.0,
+            "top": 1.0,
+            "bottom": 1.0
+        },
+        "font": {
+            "name": "Times New Roman",
+            "size": 12
+        },
+        "line_spacing": 1.5,
+        "reference_style": "Department Choice",
+        "preliminary_order": [
+            "Title Page",
+            "Copyright Page",
+            "Abstract",
+            "Acknowledgements",
+            "Biographical Note",
+            "Table of Contents",
+            "List of Figures",
+            "List of Tables"
+        ],
+        "gumroad_link": "https://gumroad.com/placeholder/mit"
+    },
+    {
+        "id": "YALE_GSAS",
+        "uni_name": "Yale University (GSAS)",
+        "course_name": "Doctoral Dissertation",
+        "year": "2026",
+        "margins": {
+            "left": 1.5,
+            "right": 1.0,
+            "top": 1.0,
+            "bottom": 1.0
+        },
+        "font": {
+            "name": "Times New Roman",
+            "size": 12
+        },
+        "line_spacing": 2.0,
+        "reference_style": "Department Choice",
+        "preliminary_order": [
+            "Title Page",
+            "Copyright",
+            "Abstract",
+            "Table of Contents",
+            "List of Tables",
+            "List of Figures",
+            "Acknowledgements"
+        ],
+        "gumroad_link": "https://gumroad.com/placeholder/yale"
+    },
+    {
+        "id": "CAMBRIDGE_UK",
+        "uni_name": "University of Cambridge",
+        "course_name": "PhD Thesis",
+        "year": "2026",
+        "margins": {
+            "left": 1.25,
+            "right": 1.0,
+            "top": 1.0,
+            "bottom": 1.0
+        },
+        "font": {
+            "name": "Arial",
+            "size": 12
+        },
+        "line_spacing": 1.5,
+        "reference_style": "Harvard",
+        "preliminary_order": [
+            "Title Page",
+            "Declaration",
+            "Summary",
+            "Acknowledgements",
+            "Table of Contents",
+            "List of Tables",
+            "List of Figures"
+        ],
+        "gumroad_link": "https://gumroad.com/placeholder/cambridge"
+    },
+    {
+        "id": "TUM_GERMANY",
+        "uni_name": "Technical University of Munich (TUM)",
+        "course_name": "Dissertation / Master Thesis",
+        "year": "2026",
+        "margins": {
+            "left": 1.0,
+            "right": 1.0,
+            "top": 1.0,
+            "bottom": 0.8
+        },
+        "font": {
+            "name": "Arial",
+            "size": 11
+        },
+        "line_spacing": 1.5,
+        "reference_style": "Harvard / IEEE",
+        "preliminary_order": [
+            "Title Page",
+            "Abstract",
+            "Zusammenfassung (German Abstract)",
+            "Table of Contents",
+            "List of Figures",
+            "List of Tables",
+            "Abbreviations"
+        ],
+        "gumroad_link": "https://gumroad.com/placeholder/tum"
+    },
+    {
+        "id": "AALTO_FINLAND",
+        "uni_name": "Aalto University",
+        "course_name": "Master's Thesis",
+        "year": "2026",
+        "margins": {
+            "left": 1.4,
+            "right": 1.0,
+            "top": 1.0,
+            "bottom": 1.0
+        },
+        "font": {
+            "name": "Arial",
+            "size": 11
+        },
+        "line_spacing": 1.2,
+        "reference_style": "Harvard",
+        "preliminary_order": [
+            "Title Page",
+            "Abstract (English)",
+            "Abstract (Finnish/Swedish)",
+            "Preface",
+            "Table of Contents",
+            "List of Symbols",
+            "List of Figures"
+        ],
+        "gumroad_link": "https://gumroad.com/placeholder/aalto"
+    },
+    {
+        "id": "UNIMELB_AUS",
+        "uni_name": "University of Melbourne",
+        "course_name": "Graduate Research Thesis",
+        "year": "2026",
+        "margins": {
+            "left": 1.2,
+            "right": 1.2,
+            "top": 1.0,
+            "bottom": 1.0
+        },
+        "font": {
+            "name": "Times New Roman",
+            "size": 12
+        },
+        "line_spacing": 1.5,
+        "reference_style": "APA / Chicago",
+        "preliminary_order": [
+            "Title Page",
+            "Declaration",
+            "Preface",
+            "Acknowledgements",
+            "Abstract",
+            "Table of Contents",
+            "List of Tables",
+            "List of Figures"
+        ],
+        "gumroad_link": "https://gumroad.com/placeholder/unimelb"
+    },
+    {
+        "id": "UBC_CANADA",
+        "uni_name": "University of British Columbia (UBC)",
+        "course_name": "Graduate Thesis",
+        "year": "2026",
+        "margins": {
+            "left": 1.25,
+            "right": 1.0,
+            "top": 1.0,
+            "bottom": 1.0
+        },
+        "font": {
+            "name": "Times New Roman",
+            "size": 12
+        },
+        "line_spacing": 2.0,
+        "reference_style": "Chicago / APA",
+        "preliminary_order": [
+            "Title Page",
+            "Committee Page",
+            "Abstract",
+            "Lay Summary",
+            "Preface",
+            "Table of Contents",
+            "List of Tables",
+            "List of Figures",
+            "Acknowledgements"
+        ],
+        "gumroad_link": "https://gumroad.com/placeholder/ubc"
+    },
+    {
+        "id": "TCD_IRELAND",
+        "uni_name": "Trinity College Dublin",
+        "course_name": "PhD Thesis",
+        "year": "2026",
+        "margins": {
+            "left": 1.4,
+            "right": 0.8,
+            "top": 0.8,
+            "bottom": 0.8
+        },
+        "font": {
+            "name": "Times New Roman",
+            "size": 11
+        },
+        "line_spacing": 1.5,
+        "reference_style": "Harvard",
+        "preliminary_order": [
+            "Title Page",
+            "Declaration",
+            "Summary",
+            "Acknowledgements",
+            "Table of Contents",
+            "List of Figures",
+            "List of Tables"
+        ],
+        "gumroad_link": "https://gumroad.com/placeholder/tcd"
+    },
+    {
+        "id": "IITB_INDIA",
+        "uni_name": "IIT Bombay",
+        "course_name": "PhD Thesis / Dissertation",
+        "year": "2026",
+        "margins": {
+            "left": 1.2,
+            "right": 0.8,
+            "top": 1.2,
+            "bottom": 0.9
+        },
+        "font": {
+            "name": "Times New Roman",
+            "size": 12
+        },
+        "line_spacing": 1.5,
+        "reference_style": "IEEE / APA",
+        "preliminary_order": [
+            "Title Page",
+            "Dedication",
+            "Approval Sheet",
+            "Certificate of Course Work",
+            "Abstract",
+            "Table of Contents",
+            "List of Figures",
+            "List of Tables"
+        ],
+        "gumroad_link": "https://gumroad.com/placeholder/iitb"
+    },
+    {
+        "id": "HARVARD_FAS",
+        "uni_name": "Harvard University (FAS)",
+        "course_name": "PhD Dissertation / Thesis",
+        "year": "2026",
+        "margins": {
+            "left": 1.5,
+            "right": 1.0,
+            "top": 1.0,
+            "bottom": 1.0
+        },
+        "font": {
+            "name": "Times New Roman",
+            "size": 12
+        },
+        "line_spacing": 2.0,
+        "reference_style": "Chicago / APA",
+        "preliminary_order": [
+            "Title Page",
+            "Copyright",
+            "Abstract",
+            "Table of Contents",
+            "List of Figures",
+            "List of Tables",
+            "Dedication",
+            "Acknowledgements"
+        ],
+        "gumroad_link": "https://gumroad.com/placeholder/harvard"
+    },
+    {
+        "id": "OXFORD_UNIV_GEN",
+        "uni_name": "University of Oxford",
+        "course_name": "DPhil / MSc / MLitt",
+        "year": "2026",
+        "margins": {
+            "left": 1.38,
+            "right": 1.0,
+            "top": 1.0,
+            "bottom": 1.0
+        },
+        "font": {
+            "name": "Times New Roman",
+            "size": 12
+        },
+        "line_spacing": 2.0,
+        "reference_style": "Oxford / Harvard",
+        "preliminary_order": [
+            "Title Page",
+            "Abstract",
+            "Acknowledgements",
+            "Table of Contents",
+            "List of Tables",
+            "List of Figures",
+            "Abbreviations"
+        ],
+        "gumroad_link": "https://gumroad.com/placeholder/oxford"
+    },
+    {
+        "id": "STANFORD_UNIV",
+        "uni_name": "Stanford University",
+        "course_name": "Dissertation / Thesis",
+        "year": "2026",
+        "margins": {
+            "left": 1.5,
+            "right": 1.0,
+            "top": 1.0,
+            "bottom": 1.0
+        },
+        "font": {
+            "name": "Times New Roman",
+            "size": 12
+        },
+        "line_spacing": 1.5,
+        "reference_style": "Discipline Dependent",
+        "preliminary_order": [
+            "Title Page",
+            "Copyright Page",
+            "Signature Page",
+            "Abstract",
+            "Preface",
+            "Acknowledgements",
+            "Table of Contents",
+            "List of Tables",
+            "List of Figures"
+        ],
+        "gumroad_link": "https://gumroad.com/placeholder/stanford"
+    },
+    {
+        "id": "UTORONTO_SGS",
+        "uni_name": "University of Toronto",
+        "course_name": "SGS Thesis",
+        "year": "2026",
+        "margins": {
+            "left": 1.25,
+            "right": 0.75,
+            "top": 0.75,
+            "bottom": 0.75
+        },
+        "font": {
+            "name": "Times New Roman",
+            "size": 12
+        },
+        "line_spacing": 2.0,
+        "reference_style": "APA / MLA",
+        "preliminary_order": [
+            "Title Page",
+            "Abstract",
+            "Acknowledgements",
+            "Table of Contents",
+            "List of Tables",
+            "List of Figures",
+            "List of Appendices"
+        ],
+        "gumroad_link": "https://gumroad.com/placeholder/utoronto"
+    },
+    {
+        "id": "IGNOU_INDIA",
+        "uni_name": "Indira Gandhi National Open University (IGNOU)",
+        "course_name": "Project Report / Dissertation",
+        "year": "2026",
+        "margins": {
+            "left": 1.5,
+            "right": 1.25,
+            "top": 1.25,
+            "bottom": 1.25
+        },
+        "font": {
+            "name": "Times New Roman",
+            "size": 12
+        },
+        "line_spacing": 1.5,
+        "reference_style": "APA",
+        "preliminary_order": [
+            "Title Page",
+            "Certificate of Originality",
+            "Acknowledgement",
+            "Table of Contents",
+            "List of Tables",
+            "List of Figures"
+        ],
+        "gumroad_link": "https://gumroad.com/placeholder/ignou"
+    },
+    {
+        "id": "BITS_PILANI_BITS",
+        "uni_name": "BITS Pilani",
+        "course_name": "ME / M.Tech / PhD",
+        "year": "2026",
+        "margins": {
+            "left": 1.25,
+            "right": 1.25,
+            "top": 1.25,
+            "bottom": 1.25
+        },
+        "font": {
+            "name": "Times New Roman",
+            "size": 12
+        },
+        "line_spacing": 2.0,
+        "reference_style": "Open (Consistent)",
+        "preliminary_order": [
+            "Title Page",
+            "Certificate",
+            "Declaration",
+            "Acknowledgement",
+            "Abstract",
+            "Table of Contents",
+            "List of Tables",
+            "List of Figures"
+        ],
+        "gumroad_link": "https://gumroad.com/placeholder/bits"
+    },
+    {
+        "id": "KHALIFA_UNIV_UAE",
+        "uni_name": "Khalifa University",
+        "course_name": "Graduate Thesis/Dissertation",
+        "year": "2026",
+        "margins": {
+            "left": 1.5,
+            "right": 1.0,
+            "top": 1.0,
+            "bottom": 1.0
+        },
+        "font": {
+            "name": "Times New Roman",
+            "size": 12
+        },
+        "line_spacing": 1.5,
+        "reference_style": "IEEE / APA",
+        "preliminary_order": [
+            "Title Page",
+            "Copyright Page",
+            "Approval/Signature Page",
+            "Dedication",
+            "Acknowledgement",
+            "Abstract",
+            "Table of Contents",
+            "List of Tables",
+            "List of Figures"
+        ],
+        "gumroad_link": "https://gumroad.com/placeholder/ku"
+    },
+    {
+        "id": "MAHE_MANIPAL",
+        "uni_name": "Manipal Academy of Higher Education",
+        "course_name": "PhD Thesis",
+        "year": "2026",
+        "margins": {
+            "left": 1.0,
+            "right": 1.0,
+            "top": 1.0,
+            "bottom": 1.0
+        },
+        "font": {
+            "name": "Times New Roman",
+            "size": 12
+        },
+        "line_spacing": 1.5,
+        "reference_style": "Vancouver / Harvard / APA",
+        "preliminary_order": [
+            "Title Page",
+            "Certificate",
+            "Declaration",
+            "Acknowledgement",
+            "Abstract",
+            "Table of Contents",
+            "List of Tables",
+            "List of Figures",
+            "List of Abbreviations"
+        ],
+        "gumroad_link": "https://gumroad.com/placeholder/mahe"
+    },
+    {
+        "id": "UAEU_NATIONAL",
+        "uni_name": "United Arab Emirates University",
+        "course_name": "Master/Doctoral Thesis",
+        "year": "2026",
+        "margins": {
+            "left": 1.5,
+            "right": 1.0,
+            "top": 1.0,
+            "bottom": 1.0
+        },
+        "font": {
+            "name": "Times New Roman",
+            "size": 12
+        },
+        "line_spacing": 2.0,
+        "reference_style": "APA",
+        "preliminary_order": [
+            "Title Page",
+            "Declaration of Original Work",
+            "Copyright",
+            "Advisory Committee",
+            "Approval of the Thesis",
+            "Abstract",
+            "Dedication",
+            "Acknowledgements",
+            "Table of Contents",
+            "List of Tables",
+            "List of Figures"
+        ],
+        "gumroad_link": "https://gumroad.com/placeholder/uaeu"
+    },
+    {
+        "id": "AMITY_DUBAI",
+        "uni_name": "Amity University Dubai",
+        "course_name": "Dissertation",
+        "year": "2026",
+        "margins": {
+            "left": 1.5,
+            "right": 1.0,
+            "top": 1.0,
+            "bottom": 1.0
+        },
+        "font": {
+            "name": "Times New Roman",
+            "size": 12
+        },
+        "line_spacing": 1.5,
+        "reference_style": "APA / Harvard",
+        "preliminary_order": [
+            "Title Page",
+            "Declaration",
+            "Certificate",
+            "Acknowledgement",
+            "Table of Contents",
+            "Table of Cases",
+            "List of Abbreviations",
+            "List of Tables",
+            "List of Figures"
+        ],
+        "gumroad_link": "https://gumroad.com/placeholder/amity"
+    }
+]
