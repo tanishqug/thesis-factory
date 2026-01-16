@@ -4,6 +4,7 @@
         "uni_name": "Massachusetts Institute of Technology (MIT)",
         "course_name": "PhD / Master's Thesis",
         "year": "2026",
+        "verified_year": 2026,
         "margins": {
             "left": 1.0,
             "right": 1.0,
@@ -261,6 +262,7 @@
         "uni_name": "Harvard University (FAS)",
         "course_name": "PhD Dissertation / Thesis",
         "year": "2026",
+        "verified_year": 2026,
         "margins": {
             "left": 1.5,
             "right": 1.0,

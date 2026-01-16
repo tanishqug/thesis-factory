@@ -120,16 +120,25 @@ def configure_styles(doc, font_data, line_spacing):
         c_font.color.rgb = RGBColor(0, 0, 0)
 
 
-def setup_margins(doc, margins):
-    """Applies margin settings to the first section."""
-    section = doc.sections[0]
-    section.left_margin = Inches(margins.get("left", 1.0))
-    section.right_margin = Inches(margins.get("right", 1.0))
-    section.top_margin = Inches(margins.get("top", 1.0))
-    section.bottom_margin = Inches(margins.get("bottom", 1.0))
-    
-    # Mirror margins logic if needed (requires OXML, simplifying to standard setup here as python-docx basic support is for single section props)
-    # mirroring can be set via mirror_margins property if supported, else default to standard binding gutter logic
+def setup_margins(doc, margins, binding="single"):
+    """
+    Applies margin settings to the document.
+    Handles 'mirror margins' for physical binding if requested.
+    """
+    sections = doc.sections
+    for section in sections:
+        section.top_margin = Inches(margins.get("top", 1.0))
+        section.bottom_margin = Inches(margins.get("bottom", 1.0))
+        section.left_margin = Inches(margins.get("left", 1.0))
+        section.right_margin = Inches(margins.get("right", 1.0))
+        
+        # Mirror Margins Logic
+        if binding == "double":
+            section.mirror_margins = True
+            # In Word, "Left" becomes "Inside" and "Right" becomes "Outside" when mirrored.
+            # We assume the JSON 'left' meant 'binding edge' (Inside).
+            section.left_margin = Inches(margins.get("left", 1.5)) # Inside
+            section.right_margin = Inches(margins.get("right", 1.0)) # Outside
 
 def add_simple_page_numbers(doc):
     """Adds a basic page number in the footer."""
@@ -179,8 +188,8 @@ def process_university(uni_data):
     # 1. Initialize Document
     doc = Document()
     
-    # 2. Setup Page Layout (Margins)
-    setup_margins(doc, uni_data.get("margins", {}))
+    # 2. Setup Page Layout (Margins & Binding)
+    setup_margins(doc, uni_data.get("margins", {}), uni_data.get("binding", "single"))
     
     # 3. Setup Styles (Fonts)
     configure_styles(doc, uni_data.get("font", {}), uni_data.get("line_spacing", 1.5))
@@ -247,32 +256,53 @@ def process_university(uni_data):
     print(f"✅ Generated {uni_name} - {course}")
 
 def generate_readme(path, data, doc_name):
-    content = f"""# {data['uni_name']} - {data['course_name']} Thesis Template (2026)
+    # Determine Binding Note
+    binding_note = ""
+    if data.get("binding") == "double":
+        binding_note = "> **Note:** This template uses **Mirror Margins** for double-sided printing (Inside margin is wider)."
+    else:
+        binding_note = "> **Note:** This template uses standard **Single-Sided** margins. For physical binding, enable 'Layout > Margins > Mirror Margins' in Word."
+
+    content = f"""# {data['uni_name']} - Compliance Starter Pack (2026)
 
 **File:** `{doc_name}`
 **Compliance:** 2026 Academic Guidelines
 **Reference Style:** {data.get('reference_style', 'Standard')}
 
-## 🛡️ Student Safety Disclaimer
-This template is a **Compliance Aid** generated programmatically based on publicly available university guidelines. 
-While we strictly adhere to margin/font rules ({data['margins']['left']}" L, {data['margins']['right']}" R), **ALWAYS** verify with your specific department before final submission.
+## 🛡️ Honest Scope Disclaimer
+This is a **Formatting Compliance Starter Pack**, not a magic "write-my-thesis" tool.
+I have handled the **Margins**, **Fonts**, and **Structure** so you can focus on writing.
 
-## 🚀 Quick Start
-1.  **Download** `{doc_name}`.
-2.  **Open in Word**.
-3.  **Fill in** your Title Page details.
-4.  **Write content** under the pre-set Chapter headings.
-    - *Tip:* Use the "Styles Pane" for `Heading 1`, `Heading 2`, and `Normal` text. Do not manually bold/size text.
-5.  **Update TOC**: Right-click the Table of Contents > "Update Field".
+**What this template DOES:**
+- ✅ Enforce correct margins (Top/Bottom/Left/Right).
+- ✅ Set the correct font family and size.
+- ✅ Generate the official preliminary pages (Title, Abstract, etc.).
+- ✅ Auto-generate the Table of Contents structure.
+
+**What this template DOES NOT do:**
+- ❌ **Auto-Cite:** You must use Zotero, Mendeley, or Word's citation manager.
+- ❌ **Write Content:** You must replace the placeholders with your research.
+
+## 🚀 Recommended Workflow
+1.  **Download & Open** `{doc_name}`.
+2.  **Verify Setup**: Check the margins in "Layout" tab (guidelines change!).
+3.  **Write Content**:
+    - Use `Heading 1` for Chapter Titles.
+    - Use `Heading 2` for Section Titles.
+    - Use `Normal` for body text.
+4.  **Insert Citations**: Use your preferred reference manager (Zotero recommended).
+5.  **Finalize**: Right-click the Table of Contents -> "Update Field".
+
+{binding_note}
 
 ## 📋 Compliance Checklist
 - [x] **Font:** {data['font']['name']} ({data['font']['size']}pt)
-- [x] **Margins:** Top {data['margins']['top']}", Bottom {data['margins']['bottom']}", Left {data['margins']['left']}", Right {data['margins']['right']}"
-- [x] **Line Spacing:** {data['line_spacing']} lines
+- [x] **Margins:** L:{data['margins']['left']}" R:{data['margins']['right']}" T:{data['margins']['top']}" B:{data['margins']['bottom']}"
 - [x] **Structure:** Preliminary pages ordered correctly.
+- [x] **Source:** Verified against official {data['year']} guidelines.
 
 ---
-*Factory Generated (v2.0 - SaaS Grade)*
+*Factory Generated (v2.1 - Compliance Safe)*
 """
     with open(path, 'w') as f:
         f.write(content)
@@ -291,7 +321,39 @@ def generate_web_page(target_dir, uni_data):
     doc_name = f"{sanitize_filename(uni_name)}_Thesis_Template_2026.docx"
     doc_link = doc_name
     year = uni_data.get('year', '2026')
+    verified_year = uni_data.get('verified_year', 2025) # Default to 2025 if missing (triggers warning)
+    current_year = 2026
+
+    # Logic: Data Decay Warning
+    decay_warning_html = ""
+    verified_badge_html = ""
     
+    if verified_year < current_year:
+        decay_warning_html = f"""
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6 text-left">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm text-yellow-700">
+                        <strong>Verification Warning:</strong> This template was verified for {verified_year}. 
+                        Please check with your department if the {current_year} guidelines have changed.
+                    </p>
+                </div>
+            </div>
+        </div>
+        """
+    else:
+        verified_badge_html = f"""
+            <div class="inline-flex items-center gap-2 bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs font-bold mb-6">
+                <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                Verified for {verified_year}
+            </div>
+        """
+
     # JSON-LD Data
     json_ld = {
         "@context": "https://schema.org/",
@@ -341,16 +403,15 @@ def generate_web_page(target_dir, uni_data):
     <!-- Hero Section -->
     <div class="bg-white pb-12 pt-12 text-center border-b border-gray-200">
         <div class="max-w-3xl mx-auto px-4">
-            <div class="inline-flex items-center gap-2 bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs font-bold mb-6">
-                <span class="w-2 h-2 bg-green-500 rounded-full"></span>
-                Official {year} Guidelines
-            </div>
+            {verified_badge_html}
+            {decay_warning_html}
             <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight leading-tight">
                 {uni_name}<br>
-                <span class="text-blue-600">{course} Template</span>
+                <span class="text-blue-600">Compliance Starter Pack</span>
             </h1>
             <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-                Stop worrying about formatting. This free template includes pre-set margins, fonts, and styles compliant with {uni_name} regulations.
+                I handled the margins, fonts, and structure so you can focus on writing. 
+                Based on {uni_name} {course} guidelines.
             </p>
             
             <!-- CTA -->

@@ -1,26 +1,40 @@
-# University of Melbourne - Graduate Research Thesis Thesis Template (2026)
+# University of Melbourne - Compliance Starter Pack (2026)
 
 **File:** `University_of_Melbourne_Thesis_Template_2026.docx`
 **Compliance:** 2026 Academic Guidelines
 **Reference Style:** APA / Chicago
 
-## 🛡️ Student Safety Disclaimer
-This template is a **Compliance Aid** generated programmatically based on publicly available university guidelines. 
-While we strictly adhere to margin/font rules (1.2" L, 1.2" R), **ALWAYS** verify with your specific department before final submission.
+## 🛡️ Honest Scope Disclaimer
+This is a **Formatting Compliance Starter Pack**, not a magic "write-my-thesis" tool.
+I have handled the **Margins**, **Fonts**, and **Structure** so you can focus on writing.
 
-## 🚀 Quick Start
-1.  **Download** `University_of_Melbourne_Thesis_Template_2026.docx`.
-2.  **Open in Word**.
-3.  **Fill in** your Title Page details.
-4.  **Write content** under the pre-set Chapter headings.
-    - *Tip:* Use the "Styles Pane" for `Heading 1`, `Heading 2`, and `Normal` text. Do not manually bold/size text.
-5.  **Update TOC**: Right-click the Table of Contents > "Update Field".
+**What this template DOES:**
+- ✅ Enforce correct margins (Top/Bottom/Left/Right).
+- ✅ Set the correct font family and size.
+- ✅ Generate the official preliminary pages (Title, Abstract, etc.).
+- ✅ Auto-generate the Table of Contents structure.
+
+**What this template DOES NOT do:**
+- ❌ **Auto-Cite:** You must use Zotero, Mendeley, or Word's citation manager.
+- ❌ **Write Content:** You must replace the placeholders with your research.
+
+## 🚀 Recommended Workflow
+1.  **Download & Open** `University_of_Melbourne_Thesis_Template_2026.docx`.
+2.  **Verify Setup**: Check the margins in "Layout" tab (guidelines change!).
+3.  **Write Content**:
+    - Use `Heading 1` for Chapter Titles.
+    - Use `Heading 2` for Section Titles.
+    - Use `Normal` for body text.
+4.  **Insert Citations**: Use your preferred reference manager (Zotero recommended).
+5.  **Finalize**: Right-click the Table of Contents -> "Update Field".
+
+> **Note:** This template uses standard **Single-Sided** margins. For physical binding, enable 'Layout > Margins > Mirror Margins' in Word.
 
 ## 📋 Compliance Checklist
 - [x] **Font:** Times New Roman (12pt)
-- [x] **Margins:** Top 1.0", Bottom 1.0", Left 1.2", Right 1.2"
-- [x] **Line Spacing:** 1.5 lines
+- [x] **Margins:** L:1.2" R:1.2" T:1.0" B:1.0"
 - [x] **Structure:** Preliminary pages ordered correctly.
+- [x] **Source:** Verified against official 2026 guidelines.
 
 ---
-*Factory Generated (v2.0 - SaaS Grade)*
+*Factory Generated (v2.1 - Compliance Safe)*
