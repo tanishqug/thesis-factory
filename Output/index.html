@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThesisFactory - Free University Thesis Templates</title>
+    <meta name="description" content="Search and download free, compliant thesis templates for universities worldwide.">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
+        #search { width: 100%; padding: 15px; font-size: 16px; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 20px; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 10px; border-bottom: 1px solid #eee; }
+        li a { text-decoration: none; color: #007bff; display: block; }
+        li a:hover { background-color: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <h1>🎓 Thesis Template Factory</h1>
+    <p>Search your university to download a 100% compliant Word template.</p>
+    
+    <input type="text" id="search" placeholder="Search by University or Course name..." onkeyup="filterList()">
+    
+    <ul id="uniList">
+        <li class="uni-item"><a href="MIT_USA/index.html"><strong>Massachusetts Institute of Technology (MIT)</strong> - PhD / Master's Thesis</a></li>
+<li class="uni-item"><a href="YALE_GSAS/index.html"><strong>Yale University (GSAS)</strong> - Doctoral Dissertation</a></li>
+<li class="uni-item"><a href="CAMBRIDGE_UK/index.html"><strong>University of Cambridge</strong> - PhD Thesis</a></li>
+<li class="uni-item"><a href="TUM_GERMANY/index.html"><strong>Technical University of Munich (TUM)</strong> - Dissertation / Master Thesis</a></li>
+<li class="uni-item"><a href="AALTO_FINLAND/index.html"><strong>Aalto University</strong> - Master's Thesis</a></li>
+<li class="uni-item"><a href="UNIMELB_AUS/index.html"><strong>University of Melbourne</strong> - Graduate Research Thesis</a></li>
+<li class="uni-item"><a href="UBC_CANADA/index.html"><strong>University of British Columbia (UBC)</strong> - Graduate Thesis</a></li>
+<li class="uni-item"><a href="TCD_IRELAND/index.html"><strong>Trinity College Dublin</strong> - PhD Thesis</a></li>
+<li class="uni-item"><a href="IITB_INDIA/index.html"><strong>IIT Bombay</strong> - PhD Thesis / Dissertation</a></li>
+<li class="uni-item"><a href="HARVARD_FAS/index.html"><strong>Harvard University (FAS)</strong> - PhD Dissertation / Thesis</a></li>
+<li class="uni-item"><a href="OXFORD_UNIV_GEN/index.html"><strong>University of Oxford</strong> - DPhil / MSc / MLitt</a></li>
+<li class="uni-item"><a href="STANFORD_UNIV/index.html"><strong>Stanford University</strong> - Dissertation / Thesis</a></li>
+<li class="uni-item"><a href="UTORONTO_SGS/index.html"><strong>University of Toronto</strong> - SGS Thesis</a></li>
+<li class="uni-item"><a href="IGNOU_INDIA/index.html"><strong>Indira Gandhi National Open University (IGNOU)</strong> - Project Report / Dissertation</a></li>
+<li class="uni-item"><a href="BITS_PILANI_BITS/index.html"><strong>BITS Pilani</strong> - ME / M.Tech / PhD</a></li>
+<li class="uni-item"><a href="KHALIFA_UNIV_UAE/index.html"><strong>Khalifa University</strong> - Graduate Thesis/Dissertation</a></li>
+<li class="uni-item"><a href="MAHE_MANIPAL/index.html"><strong>Manipal Academy of Higher Education</strong> - PhD Thesis</a></li>
+<li class="uni-item"><a href="UAEU_NATIONAL/index.html"><strong>United Arab Emirates University</strong> - Master/Doctoral Thesis</a></li>
+<li class="uni-item"><a href="AMITY_DUBAI/index.html"><strong>Amity University Dubai</strong> - Dissertation</a></li>
+
+    </ul>
+
+    <script>
+        function filterList() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('search');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("uniList");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+    
