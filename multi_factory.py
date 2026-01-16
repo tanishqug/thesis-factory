@@ -398,16 +398,43 @@ def generate_web_page(target_dir, uni_data):
 
         <!-- Column 2: Trust/Preview -->
         <div>
-            <h3 class="text-xl font-bold text-gray-900 mb-6">Document Preview</h3>
-            <div class="bg-gray-200 h-64 rounded-xl flex items-center justify-center relative overflow-hidden border border-gray-300">
-                <!-- Fallback/Placeholder Visual -->
-                <div class="text-center p-6">
-                    <div class="text-5xl mb-2">📄</div>
-                    <div class="text-sm font-bold text-gray-700">Official Formatting</div>
-                    <div class="text-xs text-gray-500 mt-1">{uni_name}<br>Title Page & Chapters</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-6 transition-colors duration-200">Document Preview</h3>
+            
+            <!-- CSS-Only Document Preview -->
+            <div class="relative bg-gray-200 h-80 rounded-xl flex items-center justify-center p-4 border border-gray-300 shadow-inner overflow-hidden group">
+                <!-- The Paper -->
+                <div class="bg-white w-48 h-64 shadow-2xl rounded-sm transform transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-1 relative flex flex-col items-center pt-8 px-4 border border-gray-100">
+                     <!-- Header Lines -->
+                     <div class="w-full h-2 bg-gray-100 mb-2"></div>
+                     <div class="w-3/4 h-2 bg-gray-100 mb-6"></div>
+                     
+                     <!-- Title -->
+                     <div class="text-[8px] font-serif text-center text-gray-800 font-bold mb-1 uppercase tracking-widest">{uni_name}</div>
+                     <div class="text-[6px] font-sans text-center text-blue-600 font-bold mb-4 uppercase tracking-wider">{course}</div>
+                     
+                     <!-- Body Lines -->
+                     <div class="w-full space-y-1">
+                        <div class="w-full h-1 bg-gray-100"></div>
+                        <div class="w-full h-1 bg-gray-100"></div>
+                        <div class="w-5/6 h-1 bg-gray-100"></div>
+                        <div class="w-full h-1 bg-gray-100"></div>
+                     </div>
+                     
+                     <!-- Footer -->
+                     <div class="mt-auto mb-4 w-full flex justify-between px-1">
+                         <div class="w-4 h-1 bg-gray-200"></div>
+                         <div class="w-2 h-1 bg-gray-200"></div>
+                     </div>
                 </div>
+                
+                <!-- Badge Overlay -->
+                 <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full shadow-lg border border-gray-100 text-xs font-bold text-green-700 flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+                    Preview
+                 </div>
             </div>
-            <div class="mt-4 flex gap-4 text-sm text-gray-600">
+
+            <div class="mt-4 flex gap-4 text-sm text-gray-600 justify-center md:justify-start">
                  <div class="flex items-center gap-1">
                     <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     <span>Virus Checked</span>
@@ -490,30 +517,59 @@ def generate_global_index(universities):
         </div>
 
         <!-- List -->
-        <ul id="uniList" class="space-y-4">
+        <ul id="uniList" class="space-y-4 min-h-[200px]">
             {list_items}
         </ul>
         
-        <div class="mt-12 text-center">
-            <p class="text-sm text-gray-400">Can't find your university? <a href="#" class="underline hover:text-gray-600">Request it here.</a></p>
+        <!-- No Results State -->
+        <div id="noResults" class="hidden text-center py-12">
+            <div class="text-6xl mb-4">🔍</div>
+            <h3 class="text-xl font-bold text-gray-900">No universities found</h3>
+            <p class="text-gray-500 mt-2">Try searching for a different name or checking the spelling.</p>
+        </div>
+        
+        <div class="mt-12 text-center border-t border-gray-100 pt-8">
+            <p class="text-sm text-gray-400">
+                Can't find your university? <a href="https://github.com/tanishqug/thesis-factory/issues" class="underline hover:text-blue-600 transition-colors">Request it on GitHub.</a>
+            </p>
+            <div class="mt-4">
+                 <a href="https://github.com/tanishqug/thesis-factory" target="_blank" class="inline-flex items-center gap-2 text-gray-400 hover:text-gray-800 transition-colors text-xs font-medium bg-white px-3 py-1.5 rounded-full border border-gray-200 shadow-sm hover:shadow-md">
+                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    Star on GitHub
+                 </a>
+            </div>
         </div>
     </div>
 
     <script>
         function filterList() {{
             var input, filter, ul, li, div, h3, txtValue;
+            var visibleCount = 0;
+            
             input = document.getElementById('search');
             filter = input.value.toUpperCase();
             ul = document.getElementById("uniList");
             li = ul.getElementsByTagName("li");
+            noResults = document.getElementById("noResults");
+            
             for (i = 0; i < li.length; i++) {{
                 h3 = li[i].getElementsByTagName("h3")[0];
                 txtValue = h3.textContent || h3.innerText;
                 if (txtValue.toUpperCase().indexOf(filter) > -1) {{
                     li[i].style.display = "";
+                    visibleCount++;
                 }} else {{
                     li[i].style.display = "none";
                 }}
+            }}
+            
+            // Toggle No Results Message
+            if (visibleCount === 0) {{
+                noResults.classList.remove("hidden");
+                ul.classList.add("hidden");
+            }} else {{
+                noResults.classList.add("hidden");
+                ul.classList.remove("hidden");
             }}
         }}
     </script>

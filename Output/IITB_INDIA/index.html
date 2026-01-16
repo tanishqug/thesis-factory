@@ -101,16 +101,43 @@
 
         <!-- Column 2: Trust/Preview -->
         <div>
-            <h3 class="text-xl font-bold text-gray-900 mb-6">Document Preview</h3>
-            <div class="bg-gray-200 h-64 rounded-xl flex items-center justify-center relative overflow-hidden border border-gray-300">
-                <!-- Fallback/Placeholder Visual -->
-                <div class="text-center p-6">
-                    <div class="text-5xl mb-2">📄</div>
-                    <div class="text-sm font-bold text-gray-700">Official Formatting</div>
-                    <div class="text-xs text-gray-500 mt-1">IIT Bombay<br>Title Page & Chapters</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-6 transition-colors duration-200">Document Preview</h3>
+            
+            <!-- CSS-Only Document Preview -->
+            <div class="relative bg-gray-200 h-80 rounded-xl flex items-center justify-center p-4 border border-gray-300 shadow-inner overflow-hidden group">
+                <!-- The Paper -->
+                <div class="bg-white w-48 h-64 shadow-2xl rounded-sm transform transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-1 relative flex flex-col items-center pt-8 px-4 border border-gray-100">
+                     <!-- Header Lines -->
+                     <div class="w-full h-2 bg-gray-100 mb-2"></div>
+                     <div class="w-3/4 h-2 bg-gray-100 mb-6"></div>
+                     
+                     <!-- Title -->
+                     <div class="text-[8px] font-serif text-center text-gray-800 font-bold mb-1 uppercase tracking-widest">IIT Bombay</div>
+                     <div class="text-[6px] font-sans text-center text-blue-600 font-bold mb-4 uppercase tracking-wider">PhD Thesis / Dissertation</div>
+                     
+                     <!-- Body Lines -->
+                     <div class="w-full space-y-1">
+                        <div class="w-full h-1 bg-gray-100"></div>
+                        <div class="w-full h-1 bg-gray-100"></div>
+                        <div class="w-5/6 h-1 bg-gray-100"></div>
+                        <div class="w-full h-1 bg-gray-100"></div>
+                     </div>
+                     
+                     <!-- Footer -->
+                     <div class="mt-auto mb-4 w-full flex justify-between px-1">
+                         <div class="w-4 h-1 bg-gray-200"></div>
+                         <div class="w-2 h-1 bg-gray-200"></div>
+                     </div>
                 </div>
+                
+                <!-- Badge Overlay -->
+                 <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full shadow-lg border border-gray-100 text-xs font-bold text-green-700 flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+                    Preview
+                 </div>
             </div>
-            <div class="mt-4 flex gap-4 text-sm text-gray-600">
+
+            <div class="mt-4 flex gap-4 text-sm text-gray-600 justify-center md:justify-start">
                  <div class="flex items-center gap-1">
                     <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     <span>Virus Checked</span>
